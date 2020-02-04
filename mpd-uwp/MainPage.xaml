@@ -6,9 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinWidth="432" MinHeight="432">
 
     <Grid>
-
+        <NavigationView IsBackButtonVisible="Collapsed" SelectionChanged="NavView_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Play" Content="Now Playing" Tag="NowPlayingPage"/>
+                <NavigationViewItem Icon="Placeholder" Content="Playlist" Tag="PlaylistPage"/>
+                <NavigationViewItem Icon="List" Content="Library" Tag="LibraryPage"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
     </Grid>
 </Page>

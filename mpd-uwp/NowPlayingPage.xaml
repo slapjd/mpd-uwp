@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="mpd_uwp.NowPlayingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:mpd_uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <RelativePanel Grid.Column="1">
+                <Button x:Name="PauseButton"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+                        Click="PauseButton_Click">
+                    <SymbolIcon x:Name="PauseButtonSymbol" Symbol="Play"/>
+                </Button>
+                <Button x:Name="PreviousTrackButton" RelativePanel.LeftOf="PauseButton" RelativePanel.AlignVerticalCenterWith="PauseButton">
+                    <SymbolIcon Symbol="Previous"/>
+                </Button>
+                <Button x:Name="StopButton" RelativePanel.LeftOf="PreviousTrackButton" RelativePanel.AlignVerticalCenterWith="PauseButton">
+                    <SymbolIcon Symbol="Stop"/>
+                </Button>
+                <Button x:Name="NextTrackButton" RelativePanel.RightOf="PauseButton" RelativePanel.AlignVerticalCenterWith="PauseButton">
+                    <SymbolIcon Symbol="Next"/>
+                </Button>
+                <Button x:Name="ShuffleButton" RelativePanel.RightOf="NextTrackButton" RelativePanel.AlignVerticalCenterWith="PauseButton">
+                    <SymbolIcon Symbol="Shuffle"/>
+                </Button>
+            </RelativePanel>
+        </Grid>
+    </Grid>
+</Page>
